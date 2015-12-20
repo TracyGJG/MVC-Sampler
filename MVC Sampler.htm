@@ -1,0 +1,39 @@
+<!doctype HTML>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=EDGE"/>
+		<meta name="application-name" content="MVC Sampler"/>
+		<meta name="description" content="Sampler for a Passive Model-View-Controller pattern"/>
+		<meta name="author" content="Mr Tracy-Gregory J Gilmore"/>
+
+		<title>Passive MVC Sampler</title>
+
+		<style type='text/css'>
+			div {
+				border: 1px solid blue;
+				display: inline;
+			}
+		</style>
+	</head>
+
+	<body>
+		<h2>MVC implementation of Input to Output binding.</h2>
+		<ol>
+		<li>The View and Model are decoupled and only able to communicate via the Controller.</li>
+		<li>Data typed by the user in sent by the View to the Controller for processing.</li>
+		<li>Data sent to the Controller is forwarded to the Model for processing.</li>
+		<li>Data received by the Model is processed and results sent to the Controller for presentation.</li>
+		<li>The Controller sends data for presentation on to the View.</li>
+		<li>The View presents processed data to the User.</li>
+		</ol>
+
+		<label>Input:<input type='text' id='txtInput'/></label>
+		<br/><br/>
+		<label>Output:<div id='divOutput'></div></label>
+
+		<script src='Model.js'></script>
+		<script src='View.js'></script>
+		<script src='Controller.js'></script>
+	</body>
+</html>
