@@ -1,19 +1,26 @@
 "use strict";
 
-var clsDataModel = function() {
-	var objController;									// Reference to the Controller.
-	var setController = function( pobjController) {		// Register the Controller within the Model
-		objController = pobjController;
+var clsDataModel = function( infController) {
+	var objDays = {
+		'monday': 'lundi',
+		'tuesday': 'mardi',
+		'wednesday': 'mercredi',
+		'thursday': 'jeudi',
+		'friday': 'vendredi',
+		'saturday': 'samedi',
+		'sunday': 'dimanche'
 	};
+	var strLastEntry = "";
 
-	//
-	var modelTest = function( strMessage) {
-		objController.test( "Response: "+ strMessage);
-	};
+	function modelTest( strMessage) {
+		if (objDays[strMessage]) {
+			strLastEntry = objDays[strMessage]
+		}
+		infController.test(strLastEntry);
+	}
 
 	// Publish the Model's public interface to the Controller.
 	return {
-		setController: setController,					// Map to the Controller.
 		test: modelTest									// Process test messages from the Controller.
 	};
 };

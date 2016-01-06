@@ -11,7 +11,7 @@
 
 		<style type='text/css'>
 			div {
-				border: 1px solid blue;
+				color: blue;
 				display: inline;
 			}
 		</style>
@@ -20,17 +20,21 @@
 	<body>
 		<h2>MVC implementation of Input to Output binding.</h2>
 		<ol>
-		<li>The View and Model are decoupled and only able to communicate via the Controller.</li>
-		<li>Data typed by the user in sent by the View to the Controller for processing.</li>
-		<li>Data sent to the Controller is forwarded to the Model for processing.</li>
-		<li>Data received by the Model is processed and results sent to the Controller for presentation.</li>
-		<li>The Controller sends data for presentation on to the View.</li>
-		<li>The View presents processed data to the User.</li>
+			<li>The View and Model are decoupled and only able to communicate via the Controller.</li>
+			<li>Data typed by the user in sent by the View to the Controller for processing.</li>
+			<li>Data sent to the Controller is forwarded to the Model for processing.</li>
+			<li>Data received by the Model is processed and results sent to the Controller for presentation.</li>
+			<li>The Controller sends data for presentation on to the View.</li>
+			<li>The View presents processed data to the User.</li>
 		</ol>
 
-		<label>Input:<input type='text' id='txtInput'/></label>
+		<p>Test: Type a day of the week, in lowercase english. The french translation will appear.</p>
+
+		<label>Input: <input type='text' id='txtInput'/></label>
+
 		<br/><br/>
-		<label>Output:<div id='divOutput'></div></label>
+
+		<label>Output: <div id='divOutput'></div></label>
 
 		<script src='Model.js'></script>
 		<script src='View.js'></script>

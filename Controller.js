@@ -1,31 +1,28 @@
 "use strict";
 
 var clsAppController = (function( pobjModel, pobjView) {
-	var objModel = pobjModel;
-	var objView = pobjView;
 
 	// Forward messages from the Model to the View.
-	var modelTest = function( pstrMessage) {
+	function modelTest( pstrMessage) {
 		objView.test(pstrMessage);
-	};
+	}
 
 	// Forward messages from the View to the Model.
-	var viewTest = function( pstrMessage) {
+	function viewTest( pstrMessage) {
 		objModel.test(pstrMessage);
-	};
+	}
 
 	// Publish the Controller's public interface to the Model.
-	objModel.setController(
+	var objModel = pobjModel(
 		{
 			test: modelTest
 		}
 	);
-
 	// Publish the Controller's public interface to the View.
-	objView.setController(
+	var objView = pobjView(
 		{
 			test: viewTest
 		}
 	);
 
-})( clsDataModel(), clsViewManager());
+})( clsDataModel, clsViewManager);
