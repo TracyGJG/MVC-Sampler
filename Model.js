@@ -14,7 +14,7 @@ var clsDataModel = function( infController) {
 
 	function modelTest( strMessage) {
 		if (objDays[strMessage]) {
-			strLastEntry = objDays[strMessage]
+			strLastEntry = objDays[strMessage];
 		}
 		infController.test(strLastEntry);
 	}
